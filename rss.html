@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新闻</title>
+</head>
+<body>
+    <script src="jquery.min.js"></script>
+    <script src="news/main.js"></script>
+    <style src="news/main.css"></style>
+    <p>点击标题选中文章后点击打开，或直接双击打开文章</p>
+    <div id="tables">
+        <div style="height:500px">
+            <table style="margin-bottom:0px">
+                <tbody id="selections"></tbody>
+            </table>
+        </div>
+        <table>
+            <tbody>
+            <tr style="height:30px;">
+            <td style="width:20%;text-align:left"><button onclick="show();" style="font-size:10px">打开</button></td>
+            <td style="width:20%;text-align:left"><button onclick="pageset(-1);" style="font-size:10px">上一页</button></td>
+            <td style="width:20%;text-align:center">
+            <p id="pagenum" style="font-size:20px;margin-bottom:0px">01/10</p>
+            </td>
+            <td style="width:20%;text-align:center"><button onclick="pageset(1);" style="font-size:10px">下一页</button></td>
+            <td style="width:20%;text-align:right"><button id="switch" onclick="switcher();" style="font-size:10px">切换至人民日报国际</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p id="passage"></p>
+</body>
+</html>

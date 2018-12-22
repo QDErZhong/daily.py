@@ -1,0 +1,12 @@
+<head>
+<meta charset='utf-8'>
+<script src="tools/jquery.min.js"></script>
+<script type='text/javascript'>
+$.getJSON("config.json").then(function(conf) {
+  $("#weather").load(conf.cdir + "/" + conf.wbase + "/index.php");
+});
+</script>
+</head>
+<body>
+<div id='weather'></div>
+</body>

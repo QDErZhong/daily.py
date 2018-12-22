@@ -1,0 +1,24 @@
+table,
+table tr th,
+table tr td {
+    border: 1px solid;
+}
+
+table {
+    width: 300px;
+    min-height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 2px;
+}
+table,
+table tr th,
+table tr td.noborder {
+    border-top: 0px solid
+}
+
+tr {
+    width: 300px;
+    height: 55px;
+}

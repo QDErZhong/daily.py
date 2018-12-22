@@ -1,0 +1,35 @@
+{
+    "cdir": ".",
+    "rssbase": "news",
+    "wbase": "weather",
+    "weather": {
+        "uri": "https://www.tianqiapi.com/api/?version=v1&city=%E9%9D%92%E5%B2%9B",
+        "imguri": "http://www.tianqiapi.com/api.php?style=ts&city=%e9%9d%92%e5%b2%9b",
+        "cache": "weather.txt",
+        "imgcache": "image",
+        "base": "http://www.tianqiapi.com"
+    },
+    "rss": [
+        {
+            "title": "人民日报国内",
+            "uri": "http://www.people.com.cn/rss/politics.xml",
+            "cache": "politics.xml",
+            "imgcache": "politics",
+            "base": "http://www.people.com.cn"
+        },
+        {
+            "title": "人民日报国际",
+            "uri": "http://www.people.com.cn/rss/world.xml",
+            "cache": "world.xml",
+            "imgcache": "world",
+            "base": "http://www.people.com.cn"
+        },
+        {
+            "title": "好奇心日报",
+            "uri": "http://www.qdaily.com/feed.xml",
+            "cache": "qdaily.xml",
+            "imgcache": "qdaily",
+            "base": "http://www.qdaily.com"
+        }
+    ]
+}
