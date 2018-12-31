@@ -12,14 +12,14 @@ def preDir():
         try:
             os.mkdir(i)
         except Exception as err:
-            pass
+            print(err)
 
 def getWeather():
     with urlopen(conf['weather']['uri']) as page:
         with open(os.path.join(conf['wbase'],conf['weather']['cache']),'wb') as f:
             f.write(page.read())
     with urlopen(conf['weather']['imguri']) as page:
-        regex = re.compile("\"\./.*?\"")
+        regex = re.compile("\"\\./.*?\"")
         links = regex.findall(page.read().decode())
         for i in range(0,3):
             links[i] = conf['weather']['base']+links[i][2:-1]
@@ -40,25 +40,29 @@ def getRSS():
     for rss in conf['rss']:
         with urlopen(rss['uri']) as page:
             thispage = page.read().decode()
-            for imgsrc in re.findall('<[imgIMG]+.*?[srcSRC]+=[\'\"](.*?)[\'\"].*?>', thispage):
+            for imgsrc in re.findall('<[imgIMG]{3}.*?[srcSRC]{3}=[\'\"](.*?)[\'\"].*?>', thispage):
                 try:
                     print('Raw src',imgsrc)
                     imgpath = os.path.join(conf['rssbase'],rss['imgcache'],imgsrc.split('?')[0].split('/')[-1])
                     src=imgsrc
                     if src[0] == '/':
                         src = rss['base'] + src
-                
+
                     print('Converted',src)
                     print('Local',imgpath)
+
+                    if imgsrc.split('/')[-1] in rss['blockimg']:
+                        thispage = thispage.replace(imgsrc,'')
+                        raise(Exception('Image Blocked'))
                     if not '.' in imgpath:
-                        raise(Exception())
+                        raise(Exception('Not A Image'))
+
                     with open(imgpath, 'wb') as f:
                         f.write(urlopen(src).read())
-                    
-                    thispage = thispage.replace(imgsrc,os.path.join(conf['cdir'],imgpath)
-)
+
+                    thispage = thispage.replace(imgsrc,os.path.join(conf['cdir'],imgpath))
                 except Exception as err:
-                    print('Skip')
+                    print(err,'Skip')
             with open(os.path.join(conf['rssbase'],rss['cache']),mode='w',encoding='utf-8') as f:
                 f.write(thispage)
 

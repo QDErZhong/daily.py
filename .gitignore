@@ -1,0 +1,6 @@
+news/*
+!news/getxml.php
+!news/main.css
+!news/main.js
+weather/*
+!weather/index.php

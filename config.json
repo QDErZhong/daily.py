@@ -15,21 +15,27 @@
             "uri": "http://www.people.com.cn/rss/politics.xml",
             "cache": "politics.xml",
             "imgcache": "politics",
-            "base": "http://www.people.com.cn"
+            "base": "http://www.people.com.cn",
+            "blockimg":[]
         },
         {
             "title": "人民日报国际",
             "uri": "http://www.people.com.cn/rss/world.xml",
             "cache": "world.xml",
             "imgcache": "world",
-            "base": "http://www.people.com.cn"
+            "base": "http://www.people.com.cn",
+            "blockimg":[]
         },
         {
             "title": "好奇心日报",
             "uri": "http://www.qdaily.com/feed.xml",
             "cache": "qdaily.xml",
             "imgcache": "qdaily",
-            "base": "http://www.qdaily.com"
+            "base": "http://www.qdaily.com",
+            "blockimg": [
+                "20160725026790Msgaji5TilWhj7z4.jpg-w600",
+                "20171222175448DuIFGKx5VU4XcYEf.png-w600"
+            ]
         }
     ]
 }
