@@ -16,7 +16,8 @@
             "cache": "politics.xml",
             "imgcache": "politics",
             "base": "http://www.people.com.cn",
-            "blockimg":[]
+            "cacheimg": true,
+            "blockimg": []
         },
         {
             "title": "人民日报国际",
@@ -24,7 +25,8 @@
             "cache": "world.xml",
             "imgcache": "world",
             "base": "http://www.people.com.cn",
-            "blockimg":[]
+            "cacheimg":true,
+            "blockimg": []
         },
         {
             "title": "好奇心日报",
@@ -32,10 +34,20 @@
             "cache": "qdaily.xml",
             "imgcache": "qdaily",
             "base": "http://www.qdaily.com",
+            "cacheimg":true,
             "blockimg": [
                 "20160725026790Msgaji5TilWhj7z4.jpg-w600",
                 "20171222175448DuIFGKx5VU4XcYEf.png-w600"
             ]
+        },
+        {
+            "title": "知乎精选",
+            "uri": "https://www.zhihu.com/rss",
+            "cache": "zhihu.xml",
+            "imgcache": "zhihu",
+            "base": "https://www.zhihu.com",
+            "cacheimg":true,
+            "blockimg": []
         }
     ]
 }

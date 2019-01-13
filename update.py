@@ -40,7 +40,7 @@ def getRSS():
     for rss in conf['rss']:
         with urlopen(rss['uri']) as page:
             thispage = page.read().decode()
-            for imgsrc in re.findall('<[imgIMG]{3}.*?[srcSRC]{3}=[\'\"](.*?)[\'\"].*?>', thispage):
+            for imgsrc in re.findall('[SsRrCc]{3} ?= ?["\'](.*?)["\']', thispage):
                 try:
                     print('Raw src',imgsrc)
                     imgpath = os.path.join(conf['rssbase'],rss['imgcache'],imgsrc.split('?')[0].split('/')[-1])
@@ -56,6 +56,8 @@ def getRSS():
                         raise(Exception('Image Blocked'))
                     if not '.' in imgpath:
                         raise(Exception('Not A Image'))
+                    if not rss['cacheimg']:
+                        raise(Exception('Not Get Image'))
 
                     with open(imgpath, 'wb') as f:
                         f.write(urlopen(src).read())
